@@ -160,7 +160,7 @@ export default function Footer() {
 
         <div className="footerBottom">
           <p className="footerCopyright">
-            ©2026 {studioInfo.fullName}. All Rights Reserved.
+            © 2026 {studioInfo.fullName} <span style={{ fontWeight: 300, marginLeft: '4px' }}>All Rights Reserved</span>
           </p>
         </div>
       </div>

@@ -942,8 +942,14 @@ svg {
 
 .footerCopyright {
   margin: 0;
-  color: rgba(49, 87, 93, 0.72);
-  font-size: 0.88rem;
+  padding: 24px 0 0 0;
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
 }
 
 .servicesPage {
