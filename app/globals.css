@@ -24,6 +24,7 @@ body {
   color: var(--text);
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   background: #edf8fa;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -85,6 +86,207 @@ svg {
   padding: 112px 0 56px;
   position: relative;
   z-index: 1;
+  animation: pageEnter 480ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pageLoading {
+  display: grid;
+  gap: 28px;
+}
+
+.shimmerBlock,
+.shimmerPanel {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerBlock::after,
+.shimmerPanel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: skeletonShimmer 1.35s ease-in-out infinite;
+}
+
+.loadingHeroCard,
+.loadingGridSection {
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.56), transparent 30%),
+    linear-gradient(180deg, #eef8fa 0%, #d9edf2 100%);
+  box-shadow: 0 24px 60px rgba(11, 46, 51, 0.1);
+}
+
+.loadingHeroCard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+  gap: 28px;
+  padding: 42px;
+  align-items: center;
+}
+
+.loadingHeroCopy {
+  display: grid;
+  gap: 14px;
+}
+
+.loadingEyebrow,
+.loadingTitleLine,
+.loadingBodyLine,
+.loadingButton,
+.loadingChip,
+.loadingSectionLabel,
+.loadingSectionTitle,
+.loadingCardMedia,
+.loadingCardLine,
+.loadingVisualPlate {
+  display: block;
+  border-radius: 999px;
+  background: rgba(79, 124, 130, 0.14);
+}
+
+.loadingEyebrow {
+  width: 132px;
+  height: 14px;
+}
+
+.loadingTitleLine {
+  height: 26px;
+  border-radius: 14px;
+}
+
+.loadingTitleLineLg {
+  width: min(100%, 620px);
+}
+
+.loadingTitleLineMd {
+  width: min(100%, 520px);
+}
+
+.loadingBodyLine {
+  width: min(100%, 540px);
+  height: 14px;
+}
+
+.loadingBodyLineShort {
+  width: min(78%, 420px);
+}
+
+.loadingButtonRow,
+.loadingChipRow {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.loadingButton {
+  width: 170px;
+  height: 48px;
+}
+
+.loadingChip {
+  width: 132px;
+  height: 38px;
+}
+
+.loadingVisualCard {
+  position: relative;
+  min-height: 420px;
+  border-radius: 30px;
+  background: rgba(247, 252, 253, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.loadingVisualOrb {
+  position: absolute;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(95, 197, 207, 0.22) 0%, rgba(255, 255, 255, 0) 72%);
+  filter: blur(6px);
+}
+
+.loadingVisualOrbOne {
+  width: 220px;
+  height: 220px;
+  top: 28px;
+  right: 20px;
+}
+
+.loadingVisualOrbTwo {
+  width: 280px;
+  height: 280px;
+  left: 10px;
+  bottom: 18px;
+}
+
+.loadingVisualPlate {
+  position: absolute;
+  inset: 70px 48px;
+  border-radius: 28px;
+}
+
+.loadingGridSection {
+  display: grid;
+  gap: 24px;
+  padding: 34px;
+}
+
+.loadingGridHeader {
+  display: grid;
+  gap: 12px;
+}
+
+.loadingSectionLabel {
+  width: 104px;
+  height: 14px;
+}
+
+.loadingSectionTitle {
+  width: min(100%, 340px);
+  height: 22px;
+  border-radius: 12px;
+}
+
+.loadingCardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.loadingCard {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 28px;
+  background: rgba(247, 252, 253, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.loadingCardMedia {
+  width: 100%;
+  aspect-ratio: 1 / 0.82;
+  border-radius: 22px;
+}
+
+.loadingCardLine {
+  width: 100%;
+  height: 14px;
+  border-radius: 10px;
+}
+
+.loadingCardLineTitle {
+  width: 58%;
+  height: 18px;
+}
+
+.loadingCardLineShort {
+  width: 72%;
 }
 
 .pageEmpty {
@@ -299,33 +501,109 @@ svg {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 24px;
-  padding: 12px 14px 12px 16px;
-  background: rgba(247, 252, 253, 0.72);
+  gap: 18px;
+  padding: 10px 12px 10px 14px;
+  background: rgba(247, 252, 253, 0.64);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 18px;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 18px 40px rgba(11, 46, 51, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 30px rgba(11, 46, 51, 0.07);
 }
 
 .siteShell[data-theme="dark"] .siteHeaderInner {
   background: rgba(15, 23, 24, 0.8);
 }
 
+.brandMark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  max-width: 220px;
+  color: var(--primary-dark);
+}
+
+.brandMarkFrame {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandMarkImage {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.brandMarkText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.brandMarkTitle,
+.brandMarkSubtitle {
+  display: block;
+  white-space: nowrap;
+}
+
+.brandMarkTitle {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.brandMarkSubtitle {
+  color: var(--text-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
 .menuToggle {
   display: none;
-  width: 56px;
+  width: 44px;
   height: 44px;
+  position: relative;
+  z-index: 3;
   border: 0;
   background: transparent;
   cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  touch-action: manipulation;
+  transition: background 160ms ease;
 }
 
 .menuToggle span {
+  display: block;
   width: 22px;
-  height: 3px;
-  margin: 4px auto;
-  background: var(--white);
+  height: 2px;
+  margin: 0;
+  background: var(--primary-dark);
+  border-radius: 999px;
+  transform-origin: center;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.menuToggleOpen span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menuToggleOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggleOpen span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .siteNav {
@@ -333,14 +611,14 @@ svg {
   align-items: center;
   gap: 6px;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   min-width: 0;
 }
 
 .navLink {
-  padding: 10px 14px;
+  padding: 9px 12px;
   color: var(--text-soft);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: background 160ms ease, color 160ms ease;
   border-radius: 999px;
@@ -356,13 +634,17 @@ svg {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 14px;
+  gap: 10px;
+}
+
+.navMetaMobile {
+  display: none;
 }
 
 .navControlGroup {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .iconToggleGroup {
@@ -374,8 +656,8 @@ svg {
 }
 
 .iconToggleButton {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -404,15 +686,16 @@ svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 18px;
+  padding: 10px 16px;
   border-radius: 999px;
   background: linear-gradient(180deg, var(--primary-dark) 0%, #133d43 100%);
   color: var(--white);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  box-shadow: 0 12px 28px rgba(11, 46, 51, 0.16);
+  box-shadow: 0 10px 20px rgba(11, 46, 51, 0.14);
+  white-space: nowrap;
 }
 
 .eyebrow {
@@ -950,6 +1233,10 @@ svg {
   letter-spacing: 0.4px;
   border-top: 1px solid var(--border);
   margin-top: 24px;
+}
+
+.mobileActionBar {
+  display: none;
 }
 
 .servicesPage {
@@ -1654,9 +1941,38 @@ svg {
   }
 }
 
+@keyframes pageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes skeletonShimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 @media (max-width: 980px) {
   .page {
     width: min(100% - 28px, 1000px);
+    padding-top: 104px;
+  }
+
+  .loadingHeroCard,
+  .loadingCardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .loadingVisualCard {
+    min-height: 300px;
   }
 
   .contactShowcaseGrid,
@@ -1681,6 +1997,18 @@ svg {
     grid-template-columns: 1fr;
   }
 
+  .homeHero,
+  .servicesHero,
+  .galleryHero,
+  .galleryPhotoSection,
+  .galleryVideoSection,
+  .servicesOutputs,
+  .studioSupportSection,
+  .servicesProcess,
+  .contactShowcase {
+    border-radius: 28px;
+  }
+
   .serviceLineVisual {
     justify-content: flex-start;
   }
@@ -1695,12 +2023,12 @@ svg {
   }
 
   .homeHeroVisual {
-    min-height: 320px;
+    min-height: 280px;
   }
 
   .homeGearStage {
-    width: min(100%, 520px);
-    min-height: 380px;
+    width: min(100%, 540px);
+    min-height: 320px;
   }
 
   .homeGearCamera {
@@ -1747,31 +2075,64 @@ svg {
 
 @media (max-width: 760px) {
   .page {
-    padding-top: 126px;
+    padding-top: 132px;
+  }
+
+  .page {
+    animation-duration: 360ms;
+  }
+  .loadingHeroCard,
+  .loadingGridSection {
+    padding: 26px 18px;
+  }
+
+  .loadingVisualCard {
+    min-height: 240px;
+  }
+
+  .loadingVisualPlate {
+    inset: 42px 22px;
+  }
+
+  .loadingButton {
+    width: 148px;
+  }
+
+  .loadingChip {
+    width: 112px;
   }
 
   .siteHeaderInner {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr auto;
     position: relative;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 20px;
   }
 
   .menuToggle {
-    display: inline-block;
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 14px;
+    background: rgba(79, 124, 130, 0.08);
   }
 
   .siteNav {
     display: none;
     position: absolute;
-    top: calc(100% + 8px);
+    z-index: 2;
+    top: calc(100% + 10px);
     left: 0;
     right: 0;
-    padding: 8px;
+    padding: 10px;
     background: rgba(247, 252, 253, 0.96);
     border: 1px solid rgba(79, 124, 130, 0.12);
     flex-direction: column;
     align-items: stretch;
-    gap: 0;
-    border-radius: 16px;
+    gap: 6px;
+    border-radius: 20px;
     box-shadow: 0 18px 40px rgba(11, 46, 51, 0.14);
   }
 
@@ -1783,33 +2144,75 @@ svg {
     display: flex;
   }
 
-  .navMeta {
-    grid-column: 1 / -1;
-    justify-content: space-between;
-    order: 3;
-    flex-wrap: wrap;
-    gap: 10px;
+  .navMetaDesktop {
+    display: none;
+  }
+
+  .navMetaMobile {
+    display: grid;
+    gap: 12px;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(79, 124, 130, 0.12);
   }
 
   .navControlGroup {
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: nowrap;
   }
 
   .navLink {
     padding: 14px 16px;
+  }
+
+  .headerCta {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
 @media (max-width: 640px) {
   .page {
     width: min(100% - 20px, 100%);
-    padding-top: 118px;
-    padding-bottom: 24px;
+    padding-top: 148px;
+    padding-bottom: 116px;
+  }
+
+  .loadingTitleLine {
+    height: 22px;
+  }
+
+  .loadingBodyLine,
+  .loadingSectionLabel {
+    height: 12px;
   }
 
   .siteHeader {
     padding-top: 10px;
+  }
+
+  .brandMark {
+    max-width: 100%;
+  }
+
+  .brandMarkFrame {
+    width: 52px;
+    height: 52px;
+  }
+
+  .brandMarkImage {
+    width: 52px;
+    height: 52px;
+  }
+
+  .brandMarkTitle {
+    font-size: 0.96rem;
+  }
+
+  .brandMarkSubtitle {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
   }
 
   .contactShowcase {
@@ -1858,6 +2261,11 @@ svg {
     grid-template-columns: 1fr;
   }
 
+  .homeHeroButton,
+  .contactActionButton {
+    min-width: 0;
+  }
+
   .serviceLine {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -1869,48 +2277,51 @@ svg {
   }
 
   .servicesHeroVisual {
-    min-height: 300px;
+    min-height: 260px;
   }
 
   .homeHeroVisual {
-    min-height: 300px;
+    min-height: auto;
   }
 
   .homeGearStage {
     width: 100%;
-    min-height: 260px;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .homeGearCard {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    min-height: 118px;
+    padding: 12px;
+    border-radius: 22px;
+    animation: none;
   }
 
   .homeGearCamera {
-    width: 112px;
-    height: 112px;
-    top: 10px;
-    left: 0;
+    grid-column: 1;
+    min-height: 132px;
   }
 
   .homeGearLens {
-    width: 76px;
-    height: 76px;
-    top: 4px;
-    right: 6px;
+    grid-column: 2;
+    min-height: 132px;
   }
 
   .homeGearKit {
-    width: 142px;
-    height: 142px;
-    top: 54px;
-    left: 74px;
+    grid-column: 1 / -1;
+    min-height: 148px;
   }
 
-  .homeGearGimbal {
-    display: none;
-  }
-
+  .homeGearGimbal,
   .homeGearDrone {
-    width: 106px;
-    height: 106px;
-    right: 2px;
-    bottom: 26px;
+    min-height: 120px;
   }
 
   .galleryHeroTitle {
@@ -1956,6 +2367,7 @@ svg {
   .siteFooter {
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 104px;
   }
 
   .siteFooterInner {
@@ -1975,9 +2387,225 @@ svg {
     gap: 10px;
   }
 
-  .footerSocialIcon,
+.footerSocialIcon,
   .contactSocialLink {
     min-width: 34px;
     height: 34px;
+  }
+
+  .mobileActionBar {
+    display: block;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 40;
+    pointer-events: none;
+  }
+
+  .mobileActionBarInner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 10px;
+    border-radius: 28px;
+    background: rgba(247, 252, 253, 0.94);
+    border: 1px solid rgba(79, 124, 130, 0.12);
+    box-shadow: 0 18px 40px rgba(11, 46, 51, 0.16);
+    backdrop-filter: blur(18px);
+    pointer-events: auto;
+  }
+
+  .mobileActionButton {
+    min-height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 999px;
+    color: #f7fcfd;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 14px 24px rgba(11, 46, 51, 0.12);
+  }
+
+  .mobileActionCall {
+    background: linear-gradient(135deg, #4ea0cf 0%, #0a2029 100%);
+  }
+
+  .mobileActionWhatsapp {
+    background: linear-gradient(135deg, #6edb75 0%, #60cc68 100%);
+  }
+
+  .mobileActionIcon {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    width: calc(100% - 16px);
+    padding-top: 144px;
+  }
+
+  .siteHeader {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .page,
+  .siteFooter {
+    padding-bottom: 108px;
+  }
+
+  .siteHeaderFrame,
+  .siteFooterInner {
+    width: 100%;
+  }
+
+  .siteHeaderInner {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .brandMark {
+    gap: 10px;
+  }
+
+  .brandMarkText {
+    gap: 1px;
+  }
+
+  .brandMarkTitle {
+    font-size: 0.88rem;
+  }
+
+  .brandMarkSubtitle {
+    font-size: 0.62rem;
+  }
+
+  .iconToggleButton {
+    width: 34px;
+    height: 34px;
+  }
+
+  .navControlGroup {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .homeHero,
+  .servicesHero,
+  .galleryHero,
+  .galleryPhotoSection,
+  .galleryVideoSection,
+  .servicesOutputs,
+  .studioSupportSection,
+  .servicesProcess,
+  .contactShowcase,
+  .siteFooterInner {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .homeHeroTitle,
+  .servicesHeroTitle,
+  .galleryHeroTitle,
+  .contactIntroTitle {
+    font-size: 2rem;
+  }
+
+  .homeHeroText,
+  .servicesHeroText,
+  .galleryHeroText,
+  .contactIntroText,
+  .contactFormText,
+  .footerLead,
+  .footerLinkText,
+  .contactInfoLine {
+    font-size: 0.94rem;
+  }
+
+  .contactInfoBlock,
+  .galleryVideoCard,
+  .contactSocialCard {
+    gap: 12px;
+  }
+
+  .contactIconWrap {
+    width: 54px;
+    height: 54px;
+  }
+
+  .galleryVideoThumb,
+  .galleryVideoEmbed {
+    min-height: 180px;
+  }
+
+  .servicesHeroBadge,
+  .homeHeroGlow,
+  .homeHeroGlowOne,
+  .homeHeroGlowTwo,
+  .servicesHeroPulseOne {
+    display: none;
+  }
+
+  .servicesHeroPulseTwo {
+    width: 180px;
+    height: 180px;
+    left: auto;
+    right: 0;
+    bottom: 12px;
+  }
+
+  .footerBrand {
+    font-size: 1.7rem;
+  }
+
+  .footerCopyright {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .mobileActionBar {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+  }
+
+  .mobileActionBarInner {
+    gap: 10px;
+    padding: 8px;
+    border-radius: 24px;
+  }
+
+  .mobileActionButton {
+    min-height: 54px;
+    gap: 8px;
+    padding: 12px 10px;
+    font-size: 0.84rem;
+  }
+
+  .mobileActionIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .page,
+  .shimmerBlock::after,
+  .shimmerPanel::after,
+  .homeHeroGlow,
+  .homeGearCard {
+    animation: none;
   }
 }
