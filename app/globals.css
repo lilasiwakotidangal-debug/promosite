@@ -27,6 +27,11 @@ body {
   overflow-x: hidden;
 }
 
+html[data-theme="dark"] body,
+body[data-theme="dark"] {
+  background: #09171a;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -55,6 +60,154 @@ body::before {
   --white: #f7fcfd;
   --border: rgba(255, 255, 255, 0.16);
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.26);
+}
+
+.siteShell[data-theme="dark"] {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.06), transparent 26%),
+    linear-gradient(180deg, #09171a 0%, var(--bg) 100%);
+}
+
+html[data-theme="dark"] body::before,
+body[data-theme="dark"]::before {
+  background:
+    radial-gradient(circle at 85% 18%, rgba(147, 177, 181, 0.12), transparent 18%),
+    radial-gradient(circle at 15% 12%, rgba(255, 255, 255, 0.08), transparent 16%);
+}
+
+.siteShell[data-theme="dark"] .loadingHeroCard,
+.siteShell[data-theme="dark"] .loadingGridSection,
+.siteShell[data-theme="dark"] .servicesHero,
+.siteShell[data-theme="dark"] .servicesLinesSection,
+.siteShell[data-theme="dark"] .servicesOutputs,
+.siteShell[data-theme="dark"] .studioSupportSection,
+.siteShell[data-theme="dark"] .servicesProcess,
+.siteShell[data-theme="dark"] .galleryHero,
+.siteShell[data-theme="dark"] .galleryPhotoSection,
+.siteShell[data-theme="dark"] .galleryVideoSection,
+.siteShell[data-theme="dark"] .lightContactShowcase,
+.siteShell[data-theme="dark"] .siteFooterInner {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 26%),
+    linear-gradient(180deg, rgba(24, 52, 57, 0.98) 0%, rgba(15, 37, 40, 0.98) 100%);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+}
+
+.siteShell[data-theme="dark"] .homeHero {
+  background:
+    radial-gradient(circle at top left, rgba(148, 207, 214, 0.14), transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(216, 242, 245, 0.08), transparent 18%),
+    linear-gradient(135deg, rgba(15, 37, 40, 0.98) 0%, rgba(19, 46, 51, 0.98) 52%, rgba(12, 28, 31, 1) 100%);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+}
+
+.siteShell[data-theme="dark"] .loadingCard,
+.siteShell[data-theme="dark"] .loadingVisualCard,
+.siteShell[data-theme="dark"] .homeGearCard,
+.siteShell[data-theme="dark"] .serviceLine,
+.siteShell[data-theme="dark"] .servicesMarquee,
+.siteShell[data-theme="dark"] .servicesOutputPill,
+.siteShell[data-theme="dark"] .studioSupportItem,
+.siteShell[data-theme="dark"] .servicesProcessStep,
+.siteShell[data-theme="dark"] .galleryPhotoCard,
+.siteShell[data-theme="dark"] .galleryVideoCard,
+.siteShell[data-theme="dark"] .contactActionSecondary,
+.siteShell[data-theme="dark"] .contactIconWrap,
+.siteShell[data-theme="dark"] .contactIllustrationFrame,
+.siteShell[data-theme="dark"] .contactKpiCard,
+.siteShell[data-theme="dark"] .contactSocialLink,
+.siteShell[data-theme="dark"] .contactSocialCard,
+.siteShell[data-theme="dark"] .contactFormCard,
+.siteShell[data-theme="dark"] .contactField input,
+.siteShell[data-theme="dark"] .contactField textarea,
+.siteShell[data-theme="dark"] .footerSocialIcon,
+.siteShell[data-theme="dark"] .mobileActionBarInner {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.18);
+}
+
+.siteShell[data-theme="dark"] .homeHighlightItem {
+  background: rgba(216, 242, 245, 0.08);
+  border-color: rgba(216, 242, 245, 0.12);
+  color: #eefbfc;
+  box-shadow: none;
+}
+
+.siteShell[data-theme="dark"] .contactIllustrationFrame {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(28, 58, 64, 0.94) 0%, rgba(20, 43, 47, 0.96) 100%);
+}
+
+.siteShell[data-theme="dark"] .contactField input:focus,
+.siteShell[data-theme="dark"] .contactField textarea:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(147, 177, 181, 0.42);
+  box-shadow: 0 0 0 4px rgba(147, 177, 181, 0.08);
+}
+
+.siteShell[data-theme="dark"] .siteHeaderInner {
+  background: rgba(10, 24, 27, 0.82);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.siteShell[data-theme="dark"] .iconToggleGroup,
+.siteShell[data-theme="dark"] .menuToggle {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.siteShell[data-theme="dark"] .siteNav {
+  background: rgba(10, 24, 27, 0.96);
+}
+
+.siteShell[data-theme="dark"] .brandMarkSubtitle,
+.siteShell[data-theme="dark"] .footerLinkText,
+.siteShell[data-theme="dark"] .footerAnchor,
+.siteShell[data-theme="dark"] .footerCopyright {
+  color: var(--text-soft);
+}
+
+.siteShell[data-theme="dark"] .homeHeroTitle {
+  color: #eefbfc;
+  text-shadow: 0 12px 40px rgba(0, 0, 0, 0.24);
+}
+
+.siteShell[data-theme="dark"] .homeHeroText {
+  color: rgba(230, 247, 249, 0.82);
+}
+
+.siteShell[data-theme="dark"] .eyebrow.accent {
+  color: #8fc9d0;
+}
+
+.siteShell[data-theme="dark"] .homeGearCard {
+  background:
+    linear-gradient(180deg, rgba(245, 251, 252, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 26px 44px rgba(0, 0, 0, 0.22);
+}
+
+.siteShell[data-theme="dark"] .homeGearImage {
+  filter: drop-shadow(0 24px 28px rgba(0, 0, 0, 0.34));
+}
+
+.siteShell[data-theme="dark"] .homeHeroGlow {
+  background: radial-gradient(circle, rgba(116, 196, 206, 0.18) 0%, rgba(255, 255, 255, 0) 72%);
+}
+
+.siteShell[data-theme="dark"] .headerCta,
+.siteShell[data-theme="dark"] .homeHeroButton,
+.siteShell[data-theme="dark"] .contactActionPrimary {
+  background: linear-gradient(180deg, #d8f2f5 0%, #8fb7bd 100%);
+  color: #102326;
+}
+
+.siteShell[data-theme="dark"] .footerCompactButton,
+.siteShell[data-theme="dark"] .contactSubmitButton {
+  background: linear-gradient(180deg, #8fe1e8 0%, #66bfc8 100%);
+  color: #102326;
 }
 
 .siteShell[data-language="en"] .lang-ne {
@@ -612,7 +765,11 @@ svg {
   gap: 6px;
   flex-wrap: wrap;
   justify-content: center;
+  justify-self: center;
+  width: fit-content;
   min-width: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .navLink {
@@ -635,6 +792,9 @@ svg {
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
 }
 
 .navMetaMobile {
@@ -645,6 +805,8 @@ svg {
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
+  z-index: 1;
 }
 
 .iconToggleGroup {
@@ -653,6 +815,8 @@ svg {
   background: rgba(79, 124, 130, 0.06);
   border: 1px solid rgba(79, 124, 130, 0.1);
   border-radius: 999px;
+  position: relative;
+  z-index: 1;
 }
 
 .iconToggleButton {
@@ -670,6 +834,10 @@ svg {
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 999px;
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
+  flex: 0 0 auto;
 }
 
 .iconSvg {
@@ -696,6 +864,8 @@ svg {
   text-transform: uppercase;
   box-shadow: 0 10px 20px rgba(11, 46, 51, 0.14);
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {

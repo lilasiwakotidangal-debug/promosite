@@ -33,6 +33,11 @@ export default function UiProvider({ children }) {
 
   useEffect(() => {
     window.localStorage.setItem("hamro-theme", theme);
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    if (document.body) {
+      document.body.dataset.theme = theme;
+    }
   }, [theme]);
 
   useEffect(() => {
