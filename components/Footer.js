@@ -30,7 +30,7 @@ const socialItems = [
   },
   {
     name: "instagram",
-    href: "#",
+    href: "https://www.instagram.com/hdsstudio07/",
     icon: (
       <svg className="footerIconSvg" viewBox="0 0 24 24" aria-hidden="true">
         <rect x="4.5" y="4.5" width="15" height="15" rx="4" fill="none" stroke="currentColor" strokeWidth="1.8" />
