@@ -1,116 +1,18 @@
 # Hamro Digital Studio
 
-A responsive promotional website for Hamro Digital Studio built with Next.js App Router.
+Promotional landing page built with Next.js.
 
-## Overview
-
-This project is a multi-page studio website with:
-
-- Home, Services, Gallery, and Contact pages
-- Light and dark theme toggle
-- English and Nepali language toggle
-- Mobile navigation and floating contact actions
-- Static image-driven presentation for studio services and portfolio content
-
-## Tech Stack
-
-- Next.js 15
-- React 19
-- App Router
-- Plain CSS via `app/globals.css`
-
-## Project Structure
-
-```text
-app/
-  page.js
-  services/page.js
-  gallery/page.js
-  contact/page.js
-  layout.js
-  loading.js
-components/
-  Navbar.js
-  Footer.js
-  MobileActionBar.js
-  UiProvider.js
-lib/
-  siteData.js
-files/
-  ...static content images
-public/
-  logo.png
-```
-
-## Local Development
-
-Install dependencies:
+## Run
 
 ```bash
 npm install
-```
-
-Start the development server:
-
-```bash
 npm run dev
 ```
 
-Open `http://localhost:3000`.
-
-## Production Build
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-Run the production server locally:
-
-```bash
-npm run start
-```
-
-## Editable Content
-
-Most studio content is centralized in:
-
-- [lib/siteData.js](/Users/sanjeebbhattarai/Desktop/Projects/promosite/lib/siteData.js)
-
-Use that file to update:
-
-- Studio name
-- Contact numbers
-- WhatsApp number
-- Email
-- Address
-- Homepage highlights and quick actions
-
-## Main UI Files
-
-- [app/page.js](/Users/sanjeebbhattarai/Desktop/Projects/promosite/app/page.js): homepage
-- [app/services/page.js](/Users/sanjeebbhattarai/Desktop/Projects/promosite/app/services/page.js): services page
-- [app/gallery/page.js](/Users/sanjeebbhattarai/Desktop/Projects/promosite/app/gallery/page.js): gallery page
-- [app/contact/page.js](/Users/sanjeebbhattarai/Desktop/Projects/promosite/app/contact/page.js): contact page
-- [components/Navbar.js](/Users/sanjeebbhattarai/Desktop/Projects/promosite/components/Navbar.js): header, language, theme, mobile nav
-- [app/globals.css](/Users/sanjeebbhattarai/Desktop/Projects/promosite/app/globals.css): global styling and responsive behavior
-
-## Deployment
-
-Recommended deployment target: Vercel.
-
-Suggested settings:
-
-- Framework Preset: `Next.js`
-- Root Directory: repository root
-- Build Command: `npm run build`
-- Output Directory: leave default
-
-Do not add a custom `vercel.json` unless you specifically need custom routing behavior.
-
 ## Notes
 
-- Images are intentionally handled as static assets for a simple deployment flow.
-- Theme preference and language preference are stored in `localStorage`.
-- If theme behavior is changed again, be careful to avoid client/server hydration mismatch.
+- Main page entry: `app/page.js`
+- Studio assets are loaded from `files/logo.jpeg` and `files/details.jpeg`
+- Contact numbers used in the page:
+  - `+977-9817973757`
+  - `+977-9842089197`

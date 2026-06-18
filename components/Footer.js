@@ -30,7 +30,7 @@ const socialItems = [
   },
   {
     name: "instagram",
-    href: "https://www.instagram.com/hdsstudio07/",
+    href: "#",
     icon: (
       <svg className="footerIconSvg" viewBox="0 0 24 24" aria-hidden="true">
         <rect x="4.5" y="4.5" width="15" height="15" rx="4" fill="none" stroke="currentColor" strokeWidth="1.8" />
@@ -160,7 +160,7 @@ export default function Footer() {
 
         <div className="footerBottom">
           <p className="footerCopyright">
-            © 2026 {studioInfo.fullName} <span style={{ fontWeight: 300, marginLeft: '4px' }}>All Rights Reserved</span>
+            ©2026 {studioInfo.fullName}. All Rights Reserved.
           </p>
         </div>
       </div>
