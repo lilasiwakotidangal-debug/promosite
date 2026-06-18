@@ -42,13 +42,14 @@ export default function Navbar() {
             aria-label="Primary navigation"
           >
             {links.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = link.href === "/" ? pathname === link.href : pathname.startsWith(link.href);
 
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={isActive ? "navLink activeNavLink" : "navLink"}
+                  aria-current={isActive ? "page" : undefined}
                   onClick={() => setMenuOpen(false)}
                 >
                   <span className="lang-en">{link.en}</span>
