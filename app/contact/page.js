@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { studioInfo } from "../../lib/siteData";
-import socialIllustration from "../../files/founder.png";
 
 export const metadata = {
   title: `Contact | ${studioInfo.fullName}`,
@@ -225,23 +223,12 @@ export default function ContactPage() {
               </div>
 
               <div className="contactConnectPanel">
-                <div className="contactIllustrationCard">
-                  <div className="contactIllustrationFrame">
-                    <Image
-                      src={socialIllustration}
-                      alt="Photographer illustration"
-                      className="contactIllustrationImage"
-                      priority
-                    />
-                  </div>
-
-                  <div className="contactKpiGrid">
-                    {socialKpis.map((item) => (
-                      <div key={item.value} className="contactKpiCard">
-                        <strong className="contactKpiValue">{item.value}</strong>
-                      </div>
-                    ))}
-                  </div>
+                <div className="contactKpiCard contactKpiUnified">
+                  {socialKpis.map((item) => (
+                    <strong key={item.value} className="contactKpiValue">
+                      {item.value}
+                    </strong>
+                  ))}
                 </div>
 
                 <div className="contactSocialGrid">
@@ -312,10 +299,15 @@ export default function ContactPage() {
                   <textarea rows="4" />
                 </label>
 
-                <button type="button" className="contactSubmitButton">
-                  <span className="lang-en">Send</span>
-                  <span className="lang-ne">पठाउनुहोस्</span>
-                </button>
+                <a
+                  className="contactSubmitButton"
+                  href={`https://wa.me/977${studioInfo.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="lang-en">WhatsApp Send</span>
+                  <span className="lang-ne">व्हाट्सएपमा पठाउनुहोस्</span>
+                </a>
               </form>
             </div>
           </div>

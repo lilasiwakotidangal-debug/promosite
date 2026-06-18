@@ -2214,20 +2214,73 @@ body::before {
 }
 
 .homeHeroButton,
-.homeCtaButton {
+.homeCtaButton,
+.contactActionButton,
+.contactSubmitButton {
   min-width: 0;
   border-radius: 2px;
   padding: 15px 28px;
   background: var(--primary-dark);
   color: var(--white);
+  border: 1px solid var(--primary-dark);
   box-shadow: 0 16px 36px rgba(24, 21, 18, 0.1);
+  font-family: var(--font-label), "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
 }
 
-.homeHeroButtonGhost {
+.homeHeroButtonGhost,
+.contactActionSecondary {
   background: rgba(253, 248, 242, 0.68);
   color: var(--primary-dark);
   border: 1px solid var(--outline-soft);
   box-shadow: none;
+}
+
+.contactActionPrimary,
+.contactSubmitButton {
+  background: var(--primary-dark);
+  color: var(--white);
+  border-color: var(--primary-dark);
+}
+
+.homeHeroButton:hover,
+.homeHeroButton:focus-visible,
+.homeCtaButton:hover,
+.homeCtaButton:focus-visible,
+.contactActionButton:hover,
+.contactActionButton:focus-visible,
+.contactSubmitButton:hover,
+.contactSubmitButton:focus-visible {
+  transform: translateY(-1px);
+  background: var(--bronze);
+  border-color: var(--bronze);
+  color: var(--white);
+  filter: none;
+}
+
+.contactActionSecondary:hover,
+.contactActionSecondary:focus-visible,
+.homeHeroButtonGhost:hover,
+.homeHeroButtonGhost:focus-visible {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: var(--white);
+}
+
+.contactSubmitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
 }
 
 .homePhilosophy,
@@ -2496,6 +2549,45 @@ body::before {
   box-shadow: none;
 }
 
+.contactConnectPanel {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.contactIllustrationCard,
+.contactIllustrationFrame {
+  display: none;
+}
+
+.contactKpiGrid {
+  grid-template-columns: 1fr;
+}
+
+.contactKpiUnified {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: auto;
+  padding: 18px 20px;
+  border: 1px solid rgba(216, 203, 193, 0.72);
+  background: rgba(255, 253, 249, 0.7);
+}
+
+.contactKpiUnified .contactKpiValue {
+  flex: 1;
+  color: var(--primary-dark);
+  font-family: var(--font-label), "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contactKpiUnified .contactKpiValue + .contactKpiValue {
+  border-left: 1px solid rgba(216, 203, 193, 0.82);
+}
+
 .servicesHeroTitle,
 .galleryHeroTitle {
   font-size: clamp(3rem, 6vw, 5.2rem);
@@ -2690,5 +2782,20 @@ body::before {
   .homeWorkLarge,
   .homeWorkWide {
     grid-column: span 2;
+  }
+
+  .contactKpiUnified {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contactKpiUnified .contactKpiValue {
+    padding: 10px 0;
+  }
+
+  .contactKpiUnified .contactKpiValue + .contactKpiValue {
+    border-left: 0;
+    border-top: 1px solid rgba(216, 203, 193, 0.82);
   }
 }
