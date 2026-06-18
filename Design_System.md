@@ -15,6 +15,14 @@ The site uses a luminous atelier direction: warm off-white foundations, editoria
 - Soft text: `#4d4540`
 - Charcoal depth: `#181512`
 
+## Typography
+
+- Headline: Playfair Display
+- Body: Source Serif 4
+- Label: Plus Jakarta Sans
+
+Use Playfair Display for major headings, page titles, brand text, and section titles. Use Source Serif 4 for paragraphs, descriptions, and long-form copy. Use Plus Jakarta Sans for navigation, buttons, eyebrows, tags, and compact UI labels.
+
 ## Usage
 
 - Use full-bleed or large editorial imagery for hero and portfolio moments.

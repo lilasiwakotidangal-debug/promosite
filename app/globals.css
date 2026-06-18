@@ -21,7 +21,7 @@ html {
 body {
   margin: 0;
   color: var(--text);
-  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-family: var(--font-label), "Trebuchet MS", "Segoe UI", sans-serif;
   background: #fbf4e8;
 }
 
@@ -104,7 +104,7 @@ svg {
 .homeHeroTitle {
   margin: 0;
   max-width: 720px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-headline), Georgia, "Times New Roman", serif;
   font-size: clamp(3rem, 5vw, 4.8rem);
   line-height: 0.94;
   letter-spacing: 0;
@@ -443,7 +443,7 @@ svg {
 
 .contactIntroTitle {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-headline), Georgia, "Times New Roman", serif;
   font-size: clamp(2.8rem, 5vw, 4.6rem);
   line-height: 0.96;
   letter-spacing: 0;
@@ -523,7 +523,7 @@ svg {
 .contactFormTitle,
 .footerBrand {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-headline), Georgia, "Times New Roman", serif;
 }
 
 .contactInfoTitle {
@@ -963,7 +963,7 @@ svg {
 .serviceLineTitle,
 .servicesProcessTitle {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-headline), Georgia, "Times New Roman", serif;
   color: var(--primary-dark);
 }
 
@@ -1326,7 +1326,7 @@ svg {
 
 .studioSupportTitle {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-headline), Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
   line-height: 1.04;
   color: var(--primary-dark);
@@ -1390,7 +1390,7 @@ svg {
 .galleryPhotoTitle,
 .galleryVideoTitle {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-headline), Georgia, "Times New Roman", serif;
   color: var(--primary-dark);
 }
 
@@ -1977,7 +1977,7 @@ svg {
 }
 
 body {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif;
   background: var(--surface);
 }
 
@@ -2019,7 +2019,7 @@ body::before {
 }
 
 .siteBrand {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-headline), Georgia, "Times New Roman", serif;
   color: var(--primary-dark);
   font-size: 1.25rem;
   font-weight: 600;
@@ -2042,7 +2042,7 @@ body::before {
 .galleryVideoLink,
 .homeTextLink,
 .eyebrow {
-  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-family: var(--font-label), "Trebuchet MS", "Segoe UI", sans-serif;
 }
 
 .navLink {
@@ -2135,7 +2135,7 @@ body::before {
 .contactIntroTitle,
 .contactFormTitle,
 .footerBrand {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-headline), Georgia, "Times New Roman", serif;
   letter-spacing: 0;
 }
 
@@ -2158,7 +2158,7 @@ body::before {
 .contactIntroText,
 .contactFormText,
 .footerLead {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif;
   color: var(--text-soft);
 }
 
@@ -2324,7 +2324,7 @@ body::before {
   padding: 0;
   list-style: none;
   color: var(--bronze);
-  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-family: var(--font-label), "Trebuchet MS", "Segoe UI", sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.06em;
