@@ -1,9 +1,9 @@
 import Image from "next/image";
-import galleryImageOne from "../../files/gallery/image.png";
-import galleryImageTwo from "../../files/gallery/image copy.png";
-import galleryImageThree from "../../files/gallery/image copy 2.png";
-import galleryImageFour from "../../files/gallery/image copy 3.png";
-import galleryImageFive from "../../files/gallery/image copy 4.png";
+import galleryImageOne from "../../files/Gallery/image.png";
+import galleryImageTwo from "../../files/Gallery/image copy.png";
+import galleryImageThree from "../../files/Gallery/image copy 2.png";
+import galleryImageFour from "../../files/Gallery/image copy 3.png";
+import galleryImageFive from "../../files/Gallery/image copy 4.png";
 import weddingHighlightsImage from "../../files/Gallery/weddinghighlights.png";
 
 export const metadata = { title: "Gallery | Hamro Digital Studio" };
